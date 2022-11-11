@@ -29,7 +29,7 @@ Come up with interfaces for 3 possible classes you think you may need for your p
 ## Class Interface 3
 *class Community
   attributes:
-  *chatroom1,2,3... (general)
+  *chatroom1,2,3... (general 
   *teenroom, 25+room, etc (separates based on age) 
   *rooms for different issues
   methods:

@@ -2,7 +2,7 @@
 # CS110 Project Proposal
 # << Project Title >>
 ## CS 110 Final Project
-### << Semester, Year >>
+### Fall, 2022
 ### [Assignment Description](https://docs.google.com/document/d/1H4R6yLL7som1lglyXWZ04RvTp_RvRFCCBn6sqv-82ps/edit?usp=sharing)
 
 https://replit.com/join/vroylsxtmg-nicholasgenoves
@@ -34,11 +34,13 @@ https://replit.com/join/vroylsxtmg-nicholasgenoves
 ## Program Design
 
 * Non-Standard libraries
+    *pygame is all we have right now. We plan to add more
     * << You should have a list of any additional libraries or modules used (pygame, request) beyond non-standard python. 
          For each additional module you should include
          - url for the module documentation
          - a short description of the module >>
 * Class Interface Design
+  * 
     * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
         * ![class diagram](assets/class_diagram.jpg) 
 * Classes
