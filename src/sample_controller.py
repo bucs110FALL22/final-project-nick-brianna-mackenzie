@@ -36,14 +36,14 @@ class Controller:
               #enter new screen based on whats pressed
             if settingsButt.collidepoint(mousePos) == True:
               #enter new screen based on whats pressed
-      appLogo = pygame.draw.rect(self.screen, (IMAGE), [x,y,w,h])
+      #appLogo = pygame.draw.rect(self.screen, (IMAGE), [5,5,590,40])
     
-      loginButt = pygame.draw.rect(self.screen, 'green', [x,y,w,h])
-      dataButt = pygame.draw.rect(self.screen, 'blue', [x,y,w,h])
-      quizButt = pygame.draw.rect(self.screen, 'red', [x,y,w,h])
-      resourcesButt = pygame.draw.rect(self.screen, 'purple', [x,y,w,h])
-      feedbackButt = pygame.draw.rect(self.screen, 'orange', [x,y,w,h])
-      settingsButt = pygame.draw.rect(self.screen, 'grey', [x,y,w,h])
+      loginButt = pygame.draw.rect(self.screen, 'green', [10,10,140,185])
+      dataButt = pygame.draw.rect(self.screen, 'blue', [160,10,140,185])
+      quizButt = pygame.draw.rect(self.screen, 'red', [340,10,140,185])
+      resourcesButt = pygame.draw.rect(self.screen, 'purple', [10,205,140,185])
+      feedbackButt = pygame.draw.rect(self.screen, 'orange', [160,205,140,185])
+      settingsButt = pygame.draw.rect(self.screen, 'grey', [340,205,140,185])
       '''
       FILL IN COORDS TO DRAW THESE BUTTONS ^^^^^^^
       '''
