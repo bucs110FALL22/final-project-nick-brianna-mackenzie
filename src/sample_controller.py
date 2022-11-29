@@ -23,16 +23,27 @@ class Controller:
           gameExit = True
         if event.type == pygame.KEYDOWN:
           if event.key == pygame.MOUSE_DOWN:
-            if # CHECK FOR COLLISION WITH BUTTONS + REPEAT
-              #code to enter new screen based on what was pressed and exit loop to new menu
-      pygame.draw.rect(self.screen, (IMAGE), [x,y,w,h]) #app logo on top
+            mousePos = pygame.mouse.get_pos()
+            if loginButt.collidepoint(mousePos) == True:
+              #enter new screen based on whats pressed
+            if dataButt.collidepoint(mousePos) == True:
+              #enter new screen based on whats pressed
+            if quizButt.collidepoint(mousePos) == True:
+              #enter new screen based on whats pressed
+            if resourcesButt.collidepoint(mousePos) == True:
+              #enter new screen based on whats pressed
+            if feedbackButt.collidepoint(mousePos) == True:
+              #enter new screen based on whats pressed
+            if settingsButt.collidepoint(mousePos) == True:
+              #enter new screen based on whats pressed
+      appLogo = pygame.draw.rect(self.screen, (IMAGE), [x,y,w,h])
     
-      pygame.draw.rect(self.screen, 'green', [x,y,w,h]) #login button
-      pygame.draw.rect(self.screen, 'blue', [x,y,w,h]) #data button
-      pygame.draw.rect(self.screen, 'red', [x,y,w,h]) #quiz button
-      pygame.draw.rect(self.screen, 'purple', [x,y,w,h]) #resour button
-      pygame.draw.rect(self.screen, 'orange', [x,y,w,h]) #feed button
-      pygame.draw.rect(self.screen, 'grey', [x,y,w,h]) #settings button?
+      loginButt = pygame.draw.rect(self.screen, 'green', [x,y,w,h])
+      dataButt = pygame.draw.rect(self.screen, 'blue', [x,y,w,h])
+      quizButt = pygame.draw.rect(self.screen, 'red', [x,y,w,h])
+      resourcesButt = pygame.draw.rect(self.screen, 'purple', [x,y,w,h])
+      feedbackButt = pygame.draw.rect(self.screen, 'orange', [x,y,w,h])
+      settingsButt = pygame.draw.rect(self.screen, 'grey', [x,y,w,h])
       '''
       FILL IN COORDS TO DRAW THESE BUTTONS ^^^^^^^
       '''
