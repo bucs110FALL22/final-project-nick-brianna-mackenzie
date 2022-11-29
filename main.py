@@ -1,5 +1,6 @@
 import pygame
 #import your controller
+from src.sample_controller.py import Controller
 
 def main():
     pygame.init()
