@@ -12,7 +12,7 @@ class Surface:
     tab2 = ttk.Frame(tabControl)
     tab3 = ttk.Frame(tabControl)  
     tab4 = ttk.Frame(tabControl)
-
+    
     tabControl.add(tab1, text ='Login/Sign Up')
     tabControl.add(tab5, text ='Data')
     tabControl.add(tab2, text ='Quiz')
