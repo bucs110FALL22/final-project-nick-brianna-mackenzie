@@ -52,7 +52,7 @@ class InputBox:
 def main():
     clock = pg.time.Clock()
     input_box1 = InputBox(100, 100, 140, 32)
-    input_box2 = InputBox(100, 300, 140, 32)
+    input_box2 = InputBox(100, 180, 140, 32)
     input_boxes = [input_box1, input_box2]
     done = False
 

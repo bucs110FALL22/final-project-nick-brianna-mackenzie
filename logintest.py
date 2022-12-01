@@ -1,12 +1,9 @@
 import pygame as pg
-
-
 pg.init()
 screen = pg.display.set_mode((640, 480))
 COLOR_INACTIVE = pg.Color('lightskyblue3')
 COLOR_ACTIVE = pg.Color('dodgerblue2')
 FONT = pg.font.Font(None, 32)
-
 
 class InputBox:
 
@@ -51,12 +48,12 @@ class InputBox:
         pg.draw.rect(screen, self.color, self.rect, 2)
 
 
-
-def main():
+def inputBoxDraw():
     clock = pg.time.Clock()
     input_box1 = InputBox(100, 100, 140, 32)
-    input_box2 = InputBox(100, 300, 140, 32)
+    input_box2 = InputBox(100, 180, 140, 32)
     input_boxes = [input_box1, input_box2]
+  
     done = False
 
     while not done:
@@ -69,14 +66,12 @@ def main():
         for box in input_boxes:
             box.update()
 
-        screen.fill((30, 30, 30))
         for box in input_boxes:
             box.draw(screen)
 
         pg.display.flip()
         clock.tick(30)
-
-
+    
 if __name__ == '__main__':
-    main()
+    inputBoxDraw()
     pg.quit()
