@@ -3,12 +3,13 @@ pygame.init()
 font = pygame.font.SysFont('Arial', 20)
 screen = pygame.display.set_mode((600,400))
 #screen.fill("red")
+
 choice1 = pygame.draw.rect(screen, 'white', [120,70,250,40])
 choice2 = pygame.draw.rect(screen, 'white', [120,120,250,40])
 choice3 = pygame.draw.rect(screen, 'white', [120,170,250,40])
 choice4 = pygame.draw.rect(screen, 'white', [120,220,250,40])
 nextButt = pygame.draw.rect(screen, 'white', [210,270,75,30])
-
+  
 homeButt = pygame.draw.rect(screen, 'pink', [0,0,400,50])
 exitButt = pygame.draw.rect(screen, 'white', [400,0,50,50])
 def Q3():
@@ -23,11 +24,11 @@ def Q2():
   screen.blit(font.render('C. Q2ChoiceC', True, (0,0,0)), (120, 170))
   screen.blit(font.render('D. Q2ChoiceD', True, (0,0,0)), (120, 220))
 def quizsetup():
-  infinite = True
+  #infinite = True
   
   appState = "quizScreen"
-  while infinite == True:
-    while appState == "quizScreen":
+  #while infinite == True:
+  while appState == "quizScreen":
       #choice1
       #choice2
       #choice3
@@ -85,8 +86,7 @@ quizsetup()
   #       quizsetup()
       
 if __name__ == '__main__':
-  quizsetup()
-  pygame.quit()
+ quizsetup()
 
 
 

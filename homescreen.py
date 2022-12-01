@@ -1,7 +1,6 @@
 import pygame
 from logintest import *
-from quiz import *
-#from I import InputBox, main()
+#from quiz import *
 
 pygame.init()
 screen = pygame.display.set_mode((600,400))
@@ -119,7 +118,7 @@ def homescreen2():
       screen.blit(font.render('Home', True, (0,0,0)), (200, 10))
       screen.blit(font.render('Exit', True, (0,0,0)), (400, 10))
       pygame.display.update()
-      quizsetup()
+      #quiz.quizsetup()
       for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
             if homeButt.collidepoint(pygame.mouse.get_pos()):
@@ -133,6 +132,9 @@ def homescreen2():
       exitButt = pygame.draw.rect(screen, 'white', [400,0,50,50])
       screen.blit(font.render('Home', True, (0,0,0)), (200, 10))
       screen.blit(font.render('Exit', True, (0,0,0)), (400, 10))
+      
+      screen.blit(font.render('resource page header', True, (0,0,0)), (10, 70))
+      
       pygame.display.update()
       for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
