@@ -110,17 +110,70 @@ def homescreen2():
                 appState = "homeScreen"
             if exitButt.collidepoint(pygame.mouse.get_pos()):
                 exit()
-    
+
     while appState == "quizScreen":
       screen.fill("red")
       homeButt = pygame.draw.rect(screen, 'pink', [0,0,400,50])
       exitButt = pygame.draw.rect(screen, 'white', [400,0,50,50])
       screen.blit(font.render('Home', True, (0,0,0)), (200, 10))
       screen.blit(font.render('Exit', True, (0,0,0)), (400, 10))
+
+      choice1 = pygame.draw.rect(screen, 'white', [120,70,250,40])
+      choice2 = pygame.draw.rect(screen, 'white', [120,120,250,40])
+      choice3 = pygame.draw.rect(screen, 'white', [120,170,250,40])
+      choice4 = pygame.draw.rect(screen, 'white', [120,220,250,40])
+      nextButt = pygame.draw.rect(screen, 'white', [210,270,75,30])
+
+      question = ""
+      
+      screen.blit(font.render('A. Q1ChoiceA...', True, (0,0,0)), (120, 70))
+      screen.blit(font.render('B. Q1ChoiceB...', True, (0,0,0)), (120, 120))
+      screen.blit(font.render('C. Q1ChoiceC', True, (0,0,0)), (120, 170))
+      screen.blit(font.render('D. Q1ChoiceD', True, (0,0,0)), (120, 220))
+      screen.blit(font.render('Next', True, (0,0,0)), (215, 270))
+      screen.blit(font.render(question, True, ('white')), (215, 75))
+
+      
       pygame.display.update()
       #quiz.quizsetup()
+      questionCounter = 0
+      quizScore = 0
       for event in pygame.event.get():
+        
+        if questionCounter == 1:
+          screen.blit(font.render(question, True, ('black')), (215, 75))
+          question = "q2"
+          screen.blit(font.render(question, True, ('white')), (215, 75))
+          screen.blit(font.render('A. Q1ChoiceA...', True, ('white')), (120, 70))
+          screen.blit(font.render('B. Q1ChoiceB...', True, ('white')), (120, 120))
+          screen.blit(font.render('C. Q1ChoiceC', True, ('white')), (120, 170))
+          screen.blit(font.render('D. Q1ChoiceD', True, ('white')), (120, 220))
+          screen.blit(font.render('A. Q2ChoiceA...', True, (0,0,0)), (120, 70))
+          screen.blit(font.render('B. Q2ChoiceB...', True, (0,0,0)), (120, 120))
+          screen.blit(font.render('C. Q2ChoiceC', True, (0,0,0)), (120, 170))
+          screen.blit(font.render('D. Q2ChoiceD', True, (0,0,0)), (120, 220))
+          pygame.display.update()
+        if questionCounter == 2:
+          screen.blit(font.render(question, True, ('black')), (215, 75))
+          question = "q3"
+          screen.blit(font.render(question, True, ('white')), (215, 75))
+          pygame.display.update()
         if event.type == pygame.MOUSEBUTTONDOWN:
+            if choice1.collidepoint(pygame.mouse.get_pos()):
+              quizScore = quizScore + 1
+              print(quizScore)
+            if choice2.collidepoint(pygame.mouse.get_pos()):
+              quizScore = quizScore + 2
+              print(quizScore)
+            if choice3.collidepoint(pygame.mouse.get_pos()):
+              quizScore = quizScore + 3
+              print(quizScore)
+            if choice4.collidepoint(pygame.mouse.get_pos()):
+              quizScore = quizScore + 4
+              print(quizScore)
+            if nextButt.collidepoint(pygame.mouse.get_pos()):
+              questionCounter = questionCounter + 1
+              print(questionCounter)
             if homeButt.collidepoint(pygame.mouse.get_pos()):
                   appState = "homeScreen"
             if exitButt.collidepoint(pygame.mouse.get_pos()):
