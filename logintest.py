@@ -1,4 +1,5 @@
 import pygame as pg
+import globalVariable as gv
 pg.init()
 screen = pg.display.set_mode((640, 480))
 COLOR_INACTIVE = pg.Color('lightskyblue3')
@@ -53,16 +54,22 @@ def inputBoxDraw():
     input_box1 = InputBox(100, 100, 140, 32)
     input_box2 = InputBox(100, 180, 140, 32)
     input_boxes = [input_box1, input_box2]
-  
-    done = False
 
-    while not done:
+    done = False
+  
+    while done == False:
+        # make an if statement here for the quit and home buttons
+        # if mousedown in quit, quit()
+        # if mousedown in home, gv.appState = "homeScreen"
+        
         for event in pg.event.get():
-            if event.type == pg.QUIT:
+            if event.type == pg.KEYDOWN:
+              if event.key == pg.K_ESCAPE:
+                gv.appState = "homeScreen"
                 done = True
             for box in input_boxes:
                 box.handle_event(event)
-
+      
         for box in input_boxes:
             box.update()
 

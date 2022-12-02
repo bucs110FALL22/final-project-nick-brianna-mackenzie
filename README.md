@@ -9,7 +9,7 @@ https://replit.com/join/vroylsxtmg-nicholasgenoves
 
 << [link to demo presentation slides](#) >>
 
-### Team: << team name >>
+### Team: Team 5
 #### Nicholas Genovese, Brianna Jules
 
 ***

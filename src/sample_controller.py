@@ -1,8 +1,5 @@
 import pygame
-import tkinter as tk
-from tkinter import ttk
-from src.Rectangle.py import Rectangle
-from src.Surface.py import Surface
+import sample_controller
 
 class Controller:
   
