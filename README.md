@@ -16,19 +16,21 @@ https://replit.com/join/vroylsxtmg-nicholasgenoves
 
 ## Project Description
 
-<< Give an overview of your project >>
-
+<< Our project is meant to teach others about mental health and provide mental health resources. We have a quiz that keeps score and writes the previous scores on the data page to show progession. The settings allows the user to customize the background color. >>
 ***    
 
 ## User Interface Design
 
 - **Initial Concept**
   - << A wireframe or drawing of the user interface concept along with a short description of the interface. You should have one for each screen in your program. For example, if your program has a start screen, game screen, and game over screen, you should include a wireframe / screenshot / drawing of each one and a short description of the components. >>
-    
+   IMG_0774 2.jpeg 
     
 - **Final GUI**
-  - << You should also have a screenshot of each screen for your final GUI >>
-
+  - <<![Final GUI](homescreensc.png) >>
+  - <<![Final GUI](loginsc.png) >>
+  - <<![Final GUI](quizsc.png) >>
+  - <<![Final GUI](resourcessc.png) >>
+  - <<![Final GUI](settingssc.png) >>
 ***        
 
 ## Program Design

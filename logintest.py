@@ -5,6 +5,7 @@ screen = pg.display.set_mode((640, 480))
 COLOR_INACTIVE = pg.Color('lightskyblue3')
 COLOR_ACTIVE = pg.Color('dodgerblue2')
 FONT = pg.font.Font(None, 32)
+font = pg.font.SysFont('Arial', 25)
 
 class InputBox:
 
@@ -61,12 +62,18 @@ def inputBoxDraw():
         # make an if statement here for the quit and home buttons
         # if mousedown in quit, quit()
         # if mousedown in home, gv.appState = "homeScreen"
-        
+
+        homeButt = pg.draw.rect(screen, 'pink', [0,0,400,50])
+        exitButt = pg.draw.rect(screen, 'white', [400,0,50,50])
+        screen.blit(font.render('Home', True, (0,0,0)), (200, 10))
+        screen.blit(font.render('Exit', True, (0,0,0)), (400, 10))
         for event in pg.event.get():
-            if event.type == pg.KEYDOWN:
-              if event.key == pg.K_ESCAPE:
+            if event.type == pg.MOUSEBUTTONDOWN:
+              if homeButt.collidepoint(pg.mouse.get_pos()):
                 gv.appState = "homeScreen"
                 done = True
+              if exitButt.collidepoint(pg.mouse.get_pos()):
+                exit()
             for box in input_boxes:
                 box.handle_event(event)
       

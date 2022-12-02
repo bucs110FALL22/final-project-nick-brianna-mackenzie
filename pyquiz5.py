@@ -135,7 +135,7 @@ def check_score(answered="wrong"):
             kill()
             time.sleep(.1)
             points +=1
-        score.change_text("You reached a score of " + str(points))
+            score.change_text("You reached a score of " + str(points))
     time.sleep(.5)
 
 questions = [
@@ -197,20 +197,30 @@ def start_again():
 def loop():
     global game_on
     show_question(qnum)
-    flag = False
-    while flag:
+  
+    #flag = False
+    # while flag:
+    #   for event in pygame.event.get():
+    #     if event.type == pygame.MOUSEBUTTONDOWN:
+    #       if homeButt.collidepoint(pygame.mouse.get_pos()):
+    #         gv.appState = "homeScreen"
+    #         flag = True
+    #       if exitButt.collidepoint(pygame.mouse.get_pos()):
+    #         exit()
+    quizInfinity = False
+    while quizInfinity == False:
         screen.fill(0)
         homeButt = pygame.draw.rect(screen, 'pink', [0,0,400,50])
         exitButt = pygame.draw.rect(screen, 'white', [400,0,50,50])
         screen.blit(font.render('Home', True, (0,0,0)), (200, 10))
         screen.blit(font.render('Exit', True, (0,0,0)), (400, 10))
         for event in pygame.event.get():
-                 if event.type == pygame.MOUSEBUTTONDOWN:
-                     if homeButt.collidepoint(pygame.mouse.get_pos()):
-                          gv.appState = "homeScreen"
-                          flag = True
-                     if exitButt.collidepoint(pygame.mouse.get_pos()):
-                          exit()
+          if event.type == pygame.MOUSEBUTTONDOWN:
+            if homeButt.collidepoint(pygame.mouse.get_pos()):
+              gv.appState = "homeScreen"
+              quizInfinity = True
+            if exitButt.collidepoint(pygame.mouse.get_pos()):
+              exit()
                    
     
         buttons.update()
@@ -218,12 +228,12 @@ def loop():
         show_labels()   
         clock.tick(60)
         pygame.display.update()
-    pygame.quit()
-    homeButt = pygame.draw.rect(screen, 'pink', [0,0,400,50])
-    exitButt = pygame.draw.rect(screen, 'white', [400,0,50,50])
-    screen.blit(font.render('Home', True, (0,0,0)), (200, 10))
-    screen.blit(font.render('Exit', True, (0,0,0)), (400, 10))
-    pygame.display.update()
+    pygame.QUIT
+    # homeButt = pygame.draw.rect(screen, 'pink', [0,0,400,50])
+    # exitButt = pygame.draw.rect(screen, 'white', [400,0,50,50])
+    # screen.blit(font.render('Home', True, (0,0,0)), (200, 10))
+    # screen.blit(font.render('Exit', True, (0,0,0)), (400, 10))
+    # pygame.display.update()
     
 if __name__ == '__main__':
     pygame.init()

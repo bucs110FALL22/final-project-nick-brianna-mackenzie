@@ -128,6 +128,7 @@ def homescreen2():
             screen.blit(font.render('Exit', True, (0, 0, 0)), (400, 10))
             screen.fill("red")
             loop()
+            
             # choice1 = pygame.draw.rect(screen, 'white', [120,70,250,40])
             # choice2 = pygame.draw.rect(screen, 'white', [120,120,250,40])
             # choice3 = pygame.draw.rect(screen, 'white', [120,170,250,40])
