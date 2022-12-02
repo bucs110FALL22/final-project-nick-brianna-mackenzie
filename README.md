@@ -26,11 +26,11 @@ https://replit.com/join/vroylsxtmg-nicholasgenoves
    IMG_0774 2.jpeg 
     
 - **Final GUI**
-  - <<![Final GUI](homescreensc.png) >>
-  - <<![Final GUI](loginsc.png) >>
-  - <<![Final GUI](quizsc.png) >>
-  - <<![Final GUI](resourcessc.png) >>
-  - <<![Final GUI](settingssc.png) >>
+  - <<![Homescreen](Final GUI/homescreensc.png) >>
+  - <<![Final GUI](Final GUI/loginsc.png) >>
+  - <<![Final GUI](Final GUI/quizsc.png) >>
+  - <<![Final GUI](Final GUI/resourcessc.png) >>
+  - <<![Final GUI](Final GUI/settingssc.png) >>
 ***        
 
 ## Program Design
@@ -44,7 +44,7 @@ https://replit.com/join/vroylsxtmg-nicholasgenoves
 * Class Interface Design
   * 
     * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
-        * ![class diagram](assets/class_diagram.jpg) 
+        * ![Class Interface Design](assets/IMG_0774 2.jpeg) 
 * Classes
     * << You should have a list of each of your classes with a description. >>
 
