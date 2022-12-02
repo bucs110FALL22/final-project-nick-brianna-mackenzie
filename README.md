@@ -26,11 +26,11 @@ https://replit.com/join/vroylsxtmg-nicholasgenoves
    IMG_0774 2.jpeg 
     
 - **Final GUI**
-  - <<![Homescreen](Final GUI/homescreensc.png) >>
-  - <<![Final GUI](Final GUI/loginsc.png) >>
-  - <<![Final GUI](Final GUI/quizsc.png) >>
-  - <<![Final GUI](Final GUI/resourcessc.png) >>
-  - <<![Final GUI](Final GUI/settingssc.png) >>
+  - <<![Homescreen](homescreensc.png)>>
+  - <<![Final GUI](loginsc.png)>>
+  - <<![Final GUI](quizsc.png)>>
+  - <<![Final GUI](resourcessc.png) >>
+  - <<![Final GUI](settingssc.png) >>
 ***        
 
 ## Program Design

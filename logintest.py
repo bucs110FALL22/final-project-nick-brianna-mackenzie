@@ -85,6 +85,42 @@ def inputBoxDraw():
 
         pg.display.flip()
         clock.tick(30)
+
+def inputBoxDraw2():
+    clock = pg.time.Clock()
+    input_box1 = InputBox(100, 100, 140, 32)
+    input_box2 = InputBox(100, 180, 140, 32)
+    input_boxes = [input_box1, input_box2]
+
+    done = False
+  
+    while done == False:
+        # make an if statement here for the quit and home buttons
+        # if mousedown in quit, quit()
+        # if mousedown in home, gv.appState = "homeScreen"
+
+        homeButt = pg.draw.rect(screen, 'pink', [0,0,400,50])
+        exitButt = pg.draw.rect(screen, 'white', [400,0,50,50])
+        screen.blit(font.render('Home', True, (0,0,0)), (200, 10))
+        screen.blit(font.render('Exit', True, (0,0,0)), (400, 10))
+        for event in pg.event.get():
+            if event.type == pg.MOUSEBUTTONDOWN:
+              if homeButt.collidepoint(pg.mouse.get_pos()):
+                gv.appState = "homeScreen"
+                done = True
+              if exitButt.collidepoint(pg.mouse.get_pos()):
+                exit()
+            for box in input_boxes:
+                box.handle_event(event)
+      
+        for box in input_boxes:
+            box.update()
+
+        for box in input_boxes:
+            box.draw(screen)
+
+        pg.display.flip()
+        clock.tick(30)
     
 if __name__ == '__main__':
     inputBoxDraw()
