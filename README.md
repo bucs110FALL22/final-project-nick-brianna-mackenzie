@@ -27,24 +27,23 @@ https://replit.com/join/vroylsxtmg-nicholasgenoves
     
 - **Final GUI**
   - <<![Homescreen](homescreensc.png)>>
-  - <<![Final GUI](loginsc.png)>>
-  - <<![Final GUI](quizsc.png)>>
-  - <<![Final GUI](resourcessc.png) >>
-  - <<![Final GUI](settingssc.png) >>
+  - <<![Login](loginsc.png)>>
+  - <<![Quiz](quizsc.png)>>
+  - <<![Resources](resourcessc.png) >>
+  - <<![Settings](settingssc.png) >>
 ***        
 
 ## Program Design
 
 * Non-Standard libraries
-    *pygame is all we have right now. We plan to add more
-    * << You should have a list of any additional libraries or modules used (pygame, request) beyond non-standard python. 
-         For each additional module you should include
-         - url for the module documentation
-         - a short description of the module >>
+    * << pygame.gfxdraw
+    * sys - url, description
+    * time - url, description
+    * random - url, description >>
 * Class Interface Design
   * 
-    * << A simple drawing that shows the class relationships in your code (see below for an example). This does not need to be overly detailed, but should show how your code fits into the Model/View/Controller paradigm. >>
-        * ![Class Interface Design](assets/IMG_0774 2.jpeg) 
+    * << ![Class Interface Design](assets/IMG_07742.jpeg) >>
+        
 * Classes
     * << You should have a list of each of your classes with a description. >>
 

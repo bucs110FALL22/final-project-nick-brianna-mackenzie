@@ -263,7 +263,7 @@ def homescreen2():
             exitButt = pygame.draw.rect(screen, 'white', [400, 0, 50, 50])
             screen.blit(font.render('Home', True, (0, 0, 0)), (200, 10))
             screen.blit(font.render('Exit', True, (0, 0, 0)), (400, 10))
-            
+            inputBoxDraw2()
             pygame.display.update()
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONDOWN:
