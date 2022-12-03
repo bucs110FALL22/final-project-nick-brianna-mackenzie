@@ -26,26 +26,28 @@ Our project is meant to teach others about mental health and provide mental heal
    
     
 - **Final GUI**
-  - ![Homescreen](homescreensc.png)
-  - ![Login](loginsc.png)
-  - ![Quiz](quizsc.png)
-  - ![Resources](resourcessc.png) 
-  - ![Settings](settingssc.png)
-  - ![Data](datasc.png)
-  - ![Feedback](feedbacksc.png)
+  - ![Homescreen](assets/GUI/homescreensc.png)
+  - ![Login](assets/GUI/loginsc.png)
+  - ![Quiz](assets/GUI/quizsc.png)
+  - ![Resources](assets/GUI/resourcessc.png) 
+  - ![Settings](assets/GUI/settingssc.png)
+  - ![Data](assets/GUI/datasc.png)
+  - ![Feedback](assets/GUI/feedbacksc.png)
 ***        
 
 ## Program Design
 
 * Non-Standard libraries
-    * << pygame.gfxdraw - ![pygame.gfxdraw](https://www.pygame.org/docs/ref/gfxdraw.html)
+    * ![pygame.gfxdraw](https://www.pygame.org/docs/ref/gfxdraw.html)
       Pygame module for drawing shapes. 
-    * sys - ![sys](https://docs.python.org/3/library/sys.html)
+    * ![sys](https://docs.python.org/3/library/sys.html)
       This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. 
-    * time - ![time](https://docs.python.org/3/library/time.html)
+    * ![time](https://docs.python.org/3/library/time.html)
       This module provides various time-related functions. 
-    * random - ![random]([](https://docs.python.org/3/library/random.html))
-      This module implements pseudo-random number generators for various distributions. 
+    * ![random](https://docs.python.org/3/library/random.html)
+      This module implements pseudo-random number generators for various distributions.
+    *![json](https://docs.python.org/3/library/json.html)
+      A lightweight data interchange format inspired by JavaScript object literal syntax (although it is not a strict subset of JavaScript
 * Class Interface Design
   * 
     * << ![Class Interface Design](assets/IMG_07742.jpeg) >>
