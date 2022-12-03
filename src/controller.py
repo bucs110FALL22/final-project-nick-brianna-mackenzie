@@ -1,12 +1,16 @@
 import pygame
-from logintest import *
-import globalVariable as gv
+import json
+from src.inputbox import *
+import src.globalVariable as gv
 #from quiz import *
-from pyquiz5 import *
+from src.quiz import *
+from src.jsonAPI import *
+
 
 pygame.init()
 screen = pygame.display.set_mode((600, 400))
 screen.fill('deepskyblue4')
+pygame.display.set_caption('bHealth')
 pygame.display.update()
 font = pygame.font.SysFont('Arial', 25)
 userpassfont = pygame.font.SysFont('Arial', 15)
@@ -16,11 +20,11 @@ Scores = []
 
 def homescreen2():
     infinite = True
-    color = "deepskyblue4"
+    bgcolor = "deepskyblue4"
     gv.appState = "homeScreen"
     while infinite == True:
         while gv.appState == "homeScreen":
-            screen.fill(color)
+            screen.fill(bgcolor)
             homeButt = pygame.draw.rect(screen, 'pink', [0, 0, 400, 50])
             exitButt = pygame.draw.rect(screen, 'white', [400, 0, 50, 50])
             loginButt = pygame.draw.rect(screen, 'green', [10, 60, 140, 165])
@@ -88,32 +92,13 @@ def homescreen2():
             screen.blit(font.render('Home', True, (0, 0, 0)), (200, 10))
             screen.blit(font.render('Exit', True, (0, 0, 0)), (400, 10))
             screen.blit(font.render('Scores:', True, (0, 0, 0)), (10, 65))
-            Scores.append(points)
+            screen.blit(font.render('3', True, (0, 0, 0)), (130, 65))
+            #screen.blit(font.render(gv.quizPoints, True, (0,0,0)), (100, 100))
+            #screen.blit(font.render(datanumber, True, (0, 0, 0)), (10, 85))
             #inputDataButton = pygame.draw.rect(screen, 'white', [40,60,520,100])
             #screen.blit(pygame.font.SysFont('Arial', 15).render(score, True, (0,0,0)), (10, 100))
+            #jsonAPI()
             pygame.display.update()
-            # clock = pg.time.Clock()
-            # input_box1 = InputBox(50,70,140,32,text='Input x-axis')
-            # input_box2 = InputBox(50,110,140,32,text='Input y-axis')
-            # input_boxes = [input_box1, input_box2]
-            # done = False
-
-            # while not done:
-            #     for event in pg.event.get():
-            #         if event.type == pg.QUIT:
-            #             done = True
-            #         for box in input_boxes:
-            #             box.handle_event(event)
-
-            #     for box in input_boxes:
-            #         box.update()
-
-            #     screen.fill((30, 30, 30))
-            #     for box in input_boxes:
-            #         box.draw(screen)
-
-            #     pg.display.flip()
-            #     clock.tick(30)
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if homeButt.collidepoint(pygame.mouse.get_pos()):
@@ -127,67 +112,13 @@ def homescreen2():
             screen.blit(font.render('Home', True, (0, 0, 0)), (200, 10))
             screen.blit(font.render('Exit', True, (0, 0, 0)), (400, 10))
             screen.fill("red")
-            loop()
-            
-            # choice1 = pygame.draw.rect(screen, 'white', [120,70,250,40])
-            # choice2 = pygame.draw.rect(screen, 'white', [120,120,250,40])
-            # choice3 = pygame.draw.rect(screen, 'white', [120,170,250,40])
-            # choice4 = pygame.draw.rect(screen, 'white', [120,220,250,40])
-            # nextButt = pygame.draw.rect(screen, 'white', [210,270,75,30])
-
-            # question = ""
-
-            # screen.blit(font.render('A. Q1ChoiceA...', True, (0,0,0)), (120, 70))
-            # screen.blit(font.render('B. Q1ChoiceB...', True, (0,0,0)), (120, 120))
-            # screen.blit(font.render('C. Q1ChoiceC', True, (0,0,0)), (120, 170))
-            # screen.blit(font.render('D. Q1ChoiceD', True, (0,0,0)), (120, 220))
-            # screen.blit(font.render('Next', True, (0,0,0)), (215, 270))
-            # screen.blit(font.render(question, True, ('white')), (215, 75))
-
-            # pygame.display.update()
-            # #quiz.quizsetup()
-            # questionCounter = 0
-            # quizScore = 0
-            # for event in pygame.event.get():
-
-            #   if questionCounter == 1:
-            #   screen.blit(font.render(question, True, ('black')), (215, 75))
-            #   question = "q2"
-            #   screen.blit(font.render(question, True, ('white')), (215, 75))
-            #   screen.blit(font.render('A. Q1ChoiceA...', True, ('white')), (120, 70))
-            #   screen.blit(font.render('B. Q1ChoiceB...', True, ('white')), (120, 120))
-            #   screen.blit(font.render('C. Q1ChoiceC', True, ('white')), (120, 170))
-            #   screen.blit(font.render('D. Q1ChoiceD', True, ('white')), (120, 220))
-            #   screen.blit(font.render('A. Q2ChoiceA...', True, (0,0,0)), (120, 70))
-            #   screen.blit(font.render('B. Q2ChoiceB...', True, (0,0,0)), (120, 120))
-            #   screen.blit(font.render('C. Q2ChoiceC', True, (0,0,0)), (120, 170))
-            #   screen.blit(font.render('D. Q2ChoiceD', True, (0,0,0)), (120, 220))
-            #   pygame.display.update()
-            # if questionCounter == 2:
-            #   screen.blit(font.render(question, True, ('black')), (215, 75))
-            #   question = "q3"
-            #   screen.blit(font.render(question, True, ('white')), (215, 75))
-            #   pygame.display.update()
-            # if event.type == pygame.MOUSEBUTTONDOWN:
-            #     if choice1.collidepoint(pygame.mouse.get_pos()):
-            #       quizScore = quizScore + 1
-            #       print(quizScore)
-            #     if choice2.collidepoint(pygame.mouse.get_pos()):
-            #       quizScore = quizScore + 2
-            #       print(quizScore)
-            #     if choice3.collidepoint(pygame.mouse.get_pos()):
-            #       quizScore = quizScore + 3
-            #       print(quizScore)
-            #     if choice4.collidepoint(pygame.mouse.get_pos()):
-            #       quizScore = quizScore + 4
-            #       print(quizScore)
-            #     if nextButt.collidepoint(pygame.mouse.get_pos()):
-            #       questionCounter = questionCounter + 1
-            #       print(questionCounter)
-            # if homeButt.collidepoint(pygame.mouse.get_pos()):
-            #       gv.appState = "homeScreen"
-            # if exitButt.collidepoint(pygame.mouse.get_pos()):
-            #       exit()
+            quizLoop()
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    if homeButt.collidepoint(pygame.mouse.get_pos()):
+                        gv.appState = "homeScreen"
+                    if exitButt.collidepoint(pygame.mouse.get_pos()):
+                        exit()
 
         while gv.appState == "resourceScreen":
             screen.fill("purple")
@@ -263,7 +194,9 @@ def homescreen2():
             exitButt = pygame.draw.rect(screen, 'white', [400, 0, 50, 50])
             screen.blit(font.render('Home', True, (0, 0, 0)), (200, 10))
             screen.blit(font.render('Exit', True, (0, 0, 0)), (400, 10))
+            screen.blit(font.render('Leave us some feedback!', True, (0, 0, 0)), (60, 60))
             inputBoxDraw2()
+            #screen.blit(font.render(gv.feedbackText, True, (0,0,0)), (100, 100))
             pygame.display.update()
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -277,7 +210,7 @@ def homescreen2():
             clickedNo = False
             flag = True
             while flag:
-                screen.fill(color)
+                screen.fill(bgcolor)
                 homeButt = pygame.draw.rect(screen, 'pink', [0, 0, 400, 50])
                 exitButt = pygame.draw.rect(screen, 'white', [400, 0, 50, 50])
                 screen.blit(font.render('Home', True, (0, 0, 0)), (200, 10))
@@ -287,36 +220,29 @@ def homescreen2():
                   aquaButt = pygame.draw.rect(screen, 'aqua', [5, 190, 60, 60])
                   magentaButt = pygame.draw.rect(screen, 'magenta', [100, 190, 60, 60])
                   maroonButt = pygame.draw.rect(screen, 'maroon', [200, 190, 60, 60])
-                  screen.blit(
-                                pygame.font.SysFont('Arial', 20).render(
-                                    'What color?', True, (0, 0, 0)), (10, 160))
+                  originalButt = pygame.draw.rect(screen, 'deepskyblue4', [300, 190, 60, 60])
+                  screen.blit(pygame.font.SysFont('Arial', 20).render('What color?', True, (0, 0, 0)), (10, 160))
                 else:
-                  aquaButt = pygame.draw.rect(screen, color, [5, 190, 60, 60])
-                  magentaButt = pygame.draw.rect(screen, color, [100, 190, 60, 60])
-                  maroonButt = pygame.draw.rect(screen, color, [200, 190, 60, 60])
+                  aquaButt = pygame.draw.rect(screen, bgcolor, [5, 190, 60, 60])
+                  magentaButt = pygame.draw.rect(screen, bgcolor, [100, 190, 60, 60])
+                  maroonButt = pygame.draw.rect(screen, bgcolor, [200, 190, 60, 60])
+                  originalButt = pygame.draw.rect(screen, bgcolor, [300, 190, 60, 60])
                   
                 if (clickedNo):
-                  screen.blit(
-                                pygame.font.SysFont('Arial', 20).render(
-                                    'Okay!', True, (0, 0, 0)), (10, 160))
+                  screen.blit(pygame.font.SysFont('Arial', 20).render('Okay!', True, (0, 0, 0)), (10, 160))
 
                 if (not clickedYes and not clickedNo):  
                   yesButt = pygame.draw.rect(screen, 'white', [5, 85, 60, 60])
                   noButt = pygame.draw.rect(screen, 'white', [100, 85, 60, 60])
                   screen.blit(
-                      pygame.font.SysFont('Arial',
-                                          20).render('Yes', True, (0, 0, 0)),
-                      (5, 85))
+                      pygame.font.SysFont('Arial',20).render('Yes', True, (0, 0, 0)),(5, 85))
                   screen.blit(
-                      pygame.font.SysFont('Arial', 20).render('No', True, (0, 0, 0)),
-                      (100, 85))
+                      pygame.font.SysFont('Arial', 20).render('No', True, (0, 0, 0)),(100, 85))
                   screen.blit(
-                      pygame.font.SysFont('Arial',
-                                          20).render('Change background color?',
-                                                     True, (0, 0, 0)), (10, 65))
+                      pygame.font.SysFont('Arial',20).render('Change background color?',True, (0, 0, 0)), (10, 65))
                 else:
-                  yesButt = pygame.draw.rect(screen, color, [5, 85, 60, 60])
-                  noButt = pygame.draw.rect(screen, color, [100, 85, 60, 60])
+                  yesButt = pygame.draw.rect(screen, bgcolor, [5, 85, 30, 30])
+                  noButt = pygame.draw.rect(screen, bgcolor, [100, 85, 30, 30])
                   
                 pygame.display.update()
                 for event in pygame.event.get():
@@ -330,11 +256,13 @@ def homescreen2():
                         if yesButt.collidepoint(pygame.mouse.get_pos()):
                             clickedYes = True
                         if aquaButt.collidepoint(pygame.mouse.get_pos()):
-                            color = 'aqua'
+                            bgcolor = 'aqua'
                         if magentaButt.collidepoint(pygame.mouse.get_pos()):
-                            color = 'magenta'
+                            bgcolor = 'magenta'
                         if maroonButt.collidepoint(pygame.mouse.get_pos()):
-                            color = 'maroon'
+                            bgcolor = 'maroon'
+                        if originalButt.collidepoint(pygame.mouse.get_pos()):
+                            bgcolor = 'deepskyblue4'
 
                         if noButt.collidepoint(pygame.mouse.get_pos()):
                             clickedNo = True

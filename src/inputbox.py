@@ -1,5 +1,5 @@
 import pygame as pg
-import globalVariable as gv
+import src.globalVariable as gv
 pg.init()
 screen = pg.display.set_mode((640, 480))
 COLOR_INACTIVE = pg.Color('lightskyblue3')
@@ -29,18 +29,23 @@ class InputBox:
         if event.type == pg.KEYDOWN:
             if self.active:
                 if event.key == pg.K_RETURN:
-                    print(self.text)
+                    #print(self.text)
+                    gv.feedbackText = self.text
                     self.text = ''
+                    #print(gv.feedbackText)
+                    if gv.appState == "feedbackScreen":
+                      screen.blit(font.render(gv.feedbackText, True, (0,0,0)), (10, 200))
                 elif event.key == pg.K_BACKSPACE:
                     self.text = self.text[:-1]
                 else:
                     self.text += event.unicode
                 # Re-render the text.
                 self.txt_surface = FONT.render(self.text, True, self.color)
+                
 
     def update(self):
         # Resize the box if the text is too long.
-        width = max(200, self.txt_surface.get_width()+10)
+        width = max(360, self.txt_surface.get_width()+10)
         self.rect.w = width
 
     def draw(self, screen):
@@ -88,7 +93,8 @@ def inputBoxDraw():
 
 def inputBoxDraw2():
     clock = pg.time.Clock()
-    input_box1 = InputBox(100, 100, 140, 32)
+    pg.draw.rect(screen, 'white', [50,100,360,32]) #draw bg of input
+    input_box1 = InputBox(50, 100, 360, 32)
     input_boxes = [input_box1]
 
     done = False
@@ -107,8 +113,10 @@ def inputBoxDraw2():
               if homeButt.collidepoint(pg.mouse.get_pos()):
                 gv.appState = "homeScreen"
                 done = True
+                
               if exitButt.collidepoint(pg.mouse.get_pos()):
                 exit()
+            
             for box in input_boxes:
                 box.handle_event(event)
       

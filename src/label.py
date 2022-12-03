@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
 
 	Label(win, "Hello World", 100, 100, 30)
-	second = Label(win, "GiovanniPython", 100, 200, 24, color="white")
+	second = Label(win, "", 100, 200, 24, color="white")
 	second.change_font("Arial", 40, "white")
 	# LOOP TO MAKE THINGS ON THE SCRREEN
 	loop = 1
